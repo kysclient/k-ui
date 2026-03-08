@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)",
+      "Bash(node:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(printf \\\\n\\\\n\\\\n:*)",
+      "Bash(npx create-fumadocs-app@latest:*)",
+      "Bash(printf y\\\\n:*)",
+      "Bash(npx fumadocs-mdx:*)",
+      "Bash(npx next:*)",
+      "Bash(ls:*)",
+      "Bash(npm run:*)",
+      "Bash(npm publish:*)",
+      "Bash(sips:*)",
+      "Bash(git add:*)",
+      "Bash(git remote:*)",
+      "Bash(git:*)",
+      "WebFetch(domain:www.gov.kr)",
+      "WebSearch"
+    ]
+  }
+}

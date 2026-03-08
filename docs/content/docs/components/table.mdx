@@ -1,0 +1,67 @@
+---
+title: Table
+description: 데이터를 행과 열로 표시하는 테이블 컴포넌트입니다.
+---
+
+## Preview
+
+<ComponentPreview className="overflow-x-auto">
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>접수번호</TableHead>
+        <TableHead>민원유형</TableHead>
+        <TableHead>접수일</TableHead>
+        <TableHead>상태</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>2024-001</TableCell>
+        <TableCell>건축 허가</TableCell>
+        <TableCell>2024-03-01</TableCell>
+        <TableCell><Badge variant="success" dot>완료</Badge></TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>2024-002</TableCell>
+        <TableCell>도로 보수</TableCell>
+        <TableCell>2024-03-05</TableCell>
+        <TableCell><Badge variant="warning" dot>처리중</Badge></TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>2024-003</TableCell>
+        <TableCell>소음 민원</TableCell>
+        <TableCell>2024-03-07</TableCell>
+        <TableCell><Badge variant="default" dot>접수</Badge></TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</ComponentPreview>
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>컬럼</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>데이터</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `Table` | 테이블 루트 (스크롤 래퍼 포함) |
+| `TableHeader` | `<thead>` |
+| `TableBody` | `<tbody>` |
+| `TableFooter` | `<tfoot>` |
+| `TableRow` | `<tr>` (hover, selected 상태 지원) |
+| `TableHead` | `<th>` (헤더 셀) |
+| `TableCell` | `<td>` (데이터 셀) |
+| `TableCaption` | `<caption>` |

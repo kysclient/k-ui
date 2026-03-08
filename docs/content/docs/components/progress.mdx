@@ -1,0 +1,103 @@
+---
+title: Progress
+description: 작업의 진행 상태를 시각적으로 나타내는 바 컴포넌트입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="w-full max-w-md">
+    <Progress value={50} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress value={50} />
+```
+
+## Sizes
+
+`size` prop으로 바의 높이를 조절할 수 있습니다.
+
+<ComponentPreview>
+  <div className="w-full max-w-md space-y-4">
+    <Progress value={40} size="sm" />
+    <Progress value={60} size="md" />
+    <Progress value={80} size="lg" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress value={40} size="sm" />
+<Progress value={60} size="md" />
+<Progress value={80} size="lg" />
+```
+
+## Variants
+
+<ComponentPreview>
+  <div className="w-full max-w-md space-y-4">
+    <Progress value={60} variant="default" />
+    <Progress value={80} variant="success" />
+    <Progress value={45} variant="warning" />
+    <Progress value={30} variant="error" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress value={60} variant="default" />
+<Progress value={80} variant="success" />
+<Progress value={45} variant="warning" />
+<Progress value={30} variant="error" />
+```
+
+## With Value
+
+`showValue` prop을 사용하면 현재 퍼센트가 표시됩니다.
+
+<ComponentPreview>
+  <div className="w-full max-w-md space-y-4">
+    <Progress value={25} showValue />
+    <Progress value={75} variant="success" showValue />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress value={25} showValue />
+<Progress value={75} variant="success" showValue />
+```
+
+## Indeterminate
+
+`indeterminate` prop을 사용하면 진행률을 알 수 없을 때 애니메이션이 표시됩니다.
+
+<ComponentPreview>
+  <div className="w-full max-w-md space-y-4">
+    <Progress indeterminate />
+    <Progress indeterminate variant="success" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress indeterminate />
+<Progress indeterminate variant="success" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `number` | `0` | 현재 진행률 (0-100) |
+| `max` | `number` | `100` | 최대값 |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | 바의 높이 |
+| `variant` | `"default" \| "success" \| "warning" \| "error"` | `"default"` | 색상 변형 |
+| `showValue` | `boolean` | `false` | 퍼센트 텍스트 표시 |
+| `indeterminate` | `boolean` | `false` | 불확정 애니메이션 상태 |
+| `className` | `string` | - | 추가 CSS 클래스 |
+
+## Accessibility
+
+- `role="progressbar"` 속성이 자동으로 적용됩니다.
+- `aria-valuenow`, `aria-valuemin`, `aria-valuemax` 속성이 설정됩니다.
+- `indeterminate` 상태에서는 `aria-valuenow`가 제거되어 스크린 리더에 불확정 상태임을 알립니다.
+- 색상만으로 상태를 전달하지 않도록 `showValue`와 함께 사용하는 것을 권장합니다.

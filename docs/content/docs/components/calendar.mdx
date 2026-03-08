@@ -1,0 +1,69 @@
+---
+title: Calendar
+description: 날짜를 선택할 수 있는 캘린더 컴포넌트입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <Calendar />
+</ComponentPreview>
+
+```tsx
+<Calendar />
+```
+
+## 날짜 선택
+
+`onDateChange` 콜백으로 선택된 날짜를 받을 수 있습니다.
+
+<ComponentPreview>
+  <Calendar defaultValue={new Date()} />
+</ComponentPreview>
+
+```tsx
+<Calendar
+  defaultValue={new Date()}
+  onDateChange={(date) => console.log(date)}
+/>
+```
+
+## 최소/최대 날짜
+
+`minDate`와 `maxDate`로 선택 가능한 날짜 범위를 제한할 수 있습니다.
+
+<ComponentPreview>
+  <Calendar
+    minDate={new Date(2026, 2, 1)}
+    maxDate={new Date(2026, 2, 31)}
+    defaultValue={new Date(2026, 2, 8)}
+  />
+</ComponentPreview>
+
+```tsx
+<Calendar
+  minDate={new Date(2026, 2, 1)}
+  maxDate={new Date(2026, 2, 31)}
+  defaultValue={new Date(2026, 2, 8)}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `Date` | - | 선택된 날짜 (제어 모드) |
+| `defaultValue` | `Date` | - | 기본 선택 날짜 (비제어 모드) |
+| `onDateChange` | `(date: Date) => void` | - | 날짜 선택 시 콜백 |
+| `minDate` | `Date` | - | 선택 가능한 최소 날짜 |
+| `maxDate` | `Date` | - | 선택 가능한 최대 날짜 |
+| `locale` | `string` | `"ko-KR"` | 로케일 설정 |
+| `className` | `string` | - | 추가 CSS 클래스 |
+
+## Accessibility
+
+- 각 날짜 셀에 `aria-label`로 전체 날짜 정보를 제공합니다 (예: "2026년 3월 8일").
+- 선택된 날짜에 `aria-selected` 속성이 적용됩니다.
+- 이전/다음 달 버튼에 `aria-label`이 설정되어 있습니다.
+- 달력 그리드에 `role="grid"` 속성이 적용됩니다.
+- 키보드 포커스 시 `focus-visible` 링이 표시됩니다.

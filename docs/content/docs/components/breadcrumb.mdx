@@ -1,0 +1,164 @@
+---
+title: Breadcrumb
+description: 현재 페이지의 계층 구조 내 위치를 보여주는 네비게이션입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <Breadcrumb>
+    <BreadcrumbList>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/">홈</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/docs">문서</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+      </BreadcrumbItem>
+    </BreadcrumbList>
+  </Breadcrumb>
+</ComponentPreview>
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">홈</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/docs">문서</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Custom Separator
+
+`BreadcrumbSeparator`에 자식 요소를 전달하여 구분자를 변경할 수 있습니다.
+
+<ComponentPreview>
+  <Breadcrumb>
+    <BreadcrumbList>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/">홈</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator>/</BreadcrumbSeparator>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/docs">컴포넌트</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator>/</BreadcrumbSeparator>
+      <BreadcrumbItem>
+        <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+      </BreadcrumbItem>
+    </BreadcrumbList>
+  </Breadcrumb>
+</ComponentPreview>
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">홈</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator>/</BreadcrumbSeparator>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/docs">컴포넌트</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator>/</BreadcrumbSeparator>
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## With Ellipsis
+
+긴 경로를 축약할 때 `BreadcrumbEllipsis`를 사용합니다.
+
+<ComponentPreview>
+  <Breadcrumb>
+    <BreadcrumbList>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/">홈</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <BreadcrumbEllipsis />
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/docs/components">컴포넌트</BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+      </BreadcrumbItem>
+    </BreadcrumbList>
+  </Breadcrumb>
+</ComponentPreview>
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">홈</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbEllipsis />
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/docs/components">컴포넌트</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Sub-components
+
+| Component | Element | Description |
+|-----------|---------|-------------|
+| `Breadcrumb` | `<nav>` | 루트 네비게이션. `aria-label="breadcrumb"` 자동 적용 |
+| `BreadcrumbList` | `<ol>` | 순서가 있는 리스트 컨테이너 |
+| `BreadcrumbItem` | `<li>` | 개별 항목 래퍼 |
+| `BreadcrumbLink` | `<a>` | 클릭 가능한 링크. `asChild`로 커스텀 요소 사용 가능 |
+| `BreadcrumbPage` | `<span>` | 현재 페이지 표시. `aria-current="page"` 자동 적용 |
+| `BreadcrumbSeparator` | `<li>` | 구분자. 기본값은 chevron-right 아이콘. 자식으로 커스텀 가능 |
+| `BreadcrumbEllipsis` | `<span>` | 축약 표시 (`...`) |
+
+## Props
+
+### BreadcrumbLink
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | 링크 URL |
+| `asChild` | `boolean` | `false` | 자식 요소를 링크로 렌더링 |
+
+### BreadcrumbSeparator
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | chevron-right SVG | 커스텀 구분자 |
+
+## Accessibility
+
+- `Breadcrumb`는 `<nav>` 요소에 `aria-label="breadcrumb"`을 자동으로 추가합니다.
+- `BreadcrumbPage`는 `aria-current="page"`를 설정하여 현재 페이지를 스크린 리더에 알립니다.
+- `BreadcrumbSeparator`는 `aria-hidden="true"`로 스크린 리더에서 숨겨집니다.
+- `BreadcrumbList`는 순서가 있는 `<ol>` 요소를 사용하여 계층 구조를 전달합니다.

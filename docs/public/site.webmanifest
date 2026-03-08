@@ -1,0 +1,21 @@
+{
+  "name": "K-UI",
+  "short_name": "K-UI",
+  "description": "A clean, accessible React UI component library inspired by KRDS (Korea Design System)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004098",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

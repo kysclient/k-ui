@@ -1,0 +1,34 @@
+---
+title: Textarea
+description: 여러 줄의 텍스트를 입력할 수 있는 폼 필드입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="w-full max-w-sm space-y-4">
+    <Textarea label="민원 내용" placeholder="민원 내용을 상세히 입력해주세요." required />
+    <Textarea label="비고" helperText="최대 500자까지 입력 가능합니다." />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Textarea label="민원 내용" placeholder="민원 내용을 상세히 입력해주세요." required />
+```
+
+## Error State
+
+<ComponentPreview>
+  <div className="w-full max-w-sm">
+    <Textarea label="사유" errorMessage="필수 입력 항목입니다." required />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | - | 라벨 텍스트 |
+| `helperText` | `string` | - | 도움말 텍스트 |
+| `errorMessage` | `string` | - | 에러 메시지 |
+| `required` | `boolean` | `false` | 필수 입력 표시 |

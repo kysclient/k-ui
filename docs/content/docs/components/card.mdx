@@ -1,0 +1,101 @@
+---
+title: Card
+description: 정보성 공지 및 민원 목록에 적합한 보더 기반 카드 레이아웃입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <KrdsCard className="w-full max-w-sm">
+    <CardHeader>
+      <CardTitle>민원 안내</CardTitle>
+      <CardDescription>온라인 민원 접수 및 처리 현황을 확인하세요.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-sm text-[#64748B]">
+        접수된 민원은 영업일 기준 3일 이내에 처리됩니다.
+      </p>
+    </CardContent>
+    <CardFooter>
+      <Button size="sm">자세히 보기</Button>
+      <Button size="sm" variant="ghost">닫기</Button>
+    </CardFooter>
+  </KrdsCard>
+</ComponentPreview>
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>민원 안내</CardTitle>
+    <CardDescription>온라인 민원 접수 및 처리 현황을 확인하세요.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>접수된 민원은 영업일 기준 3일 이내에 처리됩니다.</p>
+  </CardContent>
+  <CardFooter>
+    <Button size="sm">자세히 보기</Button>
+    <Button size="sm" variant="ghost">닫기</Button>
+  </CardFooter>
+</Card>
+```
+
+## Variants
+
+<ComponentPreview>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
+    <KrdsCard variant="default" padding="sm">
+      <CardTitle>Default</CardTitle>
+      <p className="text-sm text-[#64748B] mt-1">기본 카드</p>
+    </KrdsCard>
+    <KrdsCard variant="elevated" padding="sm">
+      <CardTitle>Elevated</CardTitle>
+      <p className="text-sm text-[#64748B] mt-1">그림자 카드</p>
+    </KrdsCard>
+    <KrdsCard variant="outlined" padding="sm">
+      <CardTitle>Outlined</CardTitle>
+      <p className="text-sm text-[#64748B] mt-1">강조 보더</p>
+    </KrdsCard>
+    <KrdsCard variant="interactive" padding="sm">
+      <CardTitle>Interactive</CardTitle>
+      <p className="text-sm text-[#64748B] mt-1">클릭 가능</p>
+    </KrdsCard>
+  </div>
+</ComponentPreview>
+
+## With Badge
+
+<ComponentPreview>
+  <KrdsCard className="w-full max-w-sm">
+    <CardHeader>
+      <div className="flex items-center justify-between">
+        <CardTitle>시스템 점검 안내</CardTitle>
+        <Badge variant="warning" dot>공지</Badge>
+      </div>
+      <CardDescription>2024년 3월 15일 02:00 ~ 06:00</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-sm text-[#64748B]">
+        서비스 안정화를 위한 정기 점검이 진행됩니다.
+      </p>
+    </CardContent>
+  </KrdsCard>
+</ComponentPreview>
+
+## Props
+
+### Card
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "elevated" \| "outlined" \| "interactive"` | `"default"` | 카드 스타일 |
+| `padding` | `"none" \| "sm" \| "md" \| "lg"` | `"md"` | 내부 여백 |
+
+### Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `CardHeader` | 상단 헤더 영역 |
+| `CardTitle` | 제목 (`h3`) |
+| `CardDescription` | 부제목/설명 |
+| `CardContent` | 본문 콘텐츠 |
+| `CardFooter` | 하단 액션 영역 (상단 보더 포함) |

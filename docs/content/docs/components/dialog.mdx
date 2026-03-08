@@ -1,0 +1,84 @@
+---
+title: Dialog
+description: 사용자 확인이 필요한 모달 대화 상자입니다. ESC 키와 오버레이 클릭으로 닫을 수 있습니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <DialogDemo />
+  </div>
+</ComponentPreview>
+
+## Form Dialog
+
+폼을 포함한 대화 상자입니다.
+
+<ComponentPreview>
+  <DialogFormDemo />
+</ComponentPreview>
+
+## Alert Dialog
+
+위험한 작업에 대한 확인 대화 상자입니다.
+
+<ComponentPreview>
+  <AlertDialogDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@kui-ui/react";
+
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>열기</Button>
+
+<Dialog open={open} onOpenChange={setOpen}>
+  <DialogContent onClose={() => setOpen(false)}>
+    <DialogHeader>
+      <DialogTitle>제목</DialogTitle>
+      <DialogDescription>설명 텍스트</DialogDescription>
+    </DialogHeader>
+    {/* 본문 내용 */}
+    <DialogFooter>
+      <Button variant="ghost" onClick={() => setOpen(false)}>취소</Button>
+      <Button>확인</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Accessibility
+
+- `role="dialog"` 및 `aria-modal="true"` 자동 적용
+- **ESC** 키로 닫기
+- 열릴 때 body 스크롤 잠금
+- 닫힐 때 트리거 포커스 복원
+- 오버레이 클릭으로 닫기
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `Dialog` | 루트 컨테이너 (`open`, `onOpenChange` 관리) |
+| `DialogContent` | 모달 본체 (오버레이 + ESC + X 버튼 포함) |
+| `DialogHeader` | 상단 헤더 영역 |
+| `DialogTitle` | 제목 (`h2`) |
+| `DialogDescription` | 설명 텍스트 |
+| `DialogFooter` | 하단 액션 버튼 영역 |
+
+### DialogContent Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `onClose` | `() => void` | 닫기 핸들러 (ESC, 오버레이, X 버튼 모두 호출) |

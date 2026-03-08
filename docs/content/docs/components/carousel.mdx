@@ -1,0 +1,91 @@
+---
+title: Carousel
+description: 수평 슬라이딩 콘텐츠 캐러셀입니다. 자동 재생, 루프, 키보드 탐색을 지원합니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <CarouselBasicDemo />
+</ComponentPreview>
+
+## Auto Play
+
+`autoPlay` 속성으로 자동 슬라이드를 활성화합니다. `interval`로 간격(ms)을 조절할 수 있습니다.
+
+<ComponentPreview>
+  <CarouselAutoPlayDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselDots,
+} from "@kui-ui/react";
+
+<Carousel loop>
+  <CarouselContent>
+    <CarouselItem>
+      <div>Slide 1</div>
+    </CarouselItem>
+    <CarouselItem>
+      <div>Slide 2</div>
+    </CarouselItem>
+    <CarouselItem>
+      <div>Slide 3</div>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselDots />
+</Carousel>
+```
+
+## Auto Play Example
+
+```tsx
+<Carousel autoPlay interval={3000} loop>
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselDots />
+</Carousel>
+```
+
+## Accessibility
+
+- `role="region"` 및 `aria-roledescription="carousel"` 자동 적용
+- 각 슬라이드에 `aria-roledescription="slide"` 및 `aria-label` 자동 적용
+- **ArrowLeft** / **ArrowRight** 키로 슬라이드 이동
+- 도트 인디케이터에 `role="tablist"` / `role="tab"` 적용
+- 이전/다음 버튼에 `aria-label` 제공
+- `aria-live="polite"`로 슬라이드 변경 알림
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `Carousel` | 루트 컨테이너 (상태 관리, 자동 재생, 키보드 탐색) |
+| `CarouselContent` | 슬라이드 래퍼 (overflow-hidden, translateX 전환) |
+| `CarouselItem` | 개별 슬라이드 (flex-shrink-0, 전체 너비) |
+| `CarouselPrevious` | 이전 슬라이드 버튼 |
+| `CarouselNext` | 다음 슬라이드 버튼 |
+| `CarouselDots` | 도트 인디케이터 |
+
+### Carousel Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `autoPlay` | `boolean` | `false` | 자동 재생 활성화 |
+| `interval` | `number` | `5000` | 자동 재생 간격 (ms) |
+| `loop` | `boolean` | `true` | 마지막 슬라이드에서 처음으로 순환 |
+| `className` | `string` | — | 추가 CSS 클래스 |

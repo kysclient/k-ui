@@ -1,0 +1,64 @@
+---
+title: Badge
+description: 공지, 진행중 등 상태를 나타내는 인라인 태그입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex flex-wrap items-center gap-2">
+    <Badge variant="default">기본</Badge>
+    <Badge variant="success">완료</Badge>
+    <Badge variant="warning">주의</Badge>
+    <Badge variant="error">오류</Badge>
+    <Badge variant="info">정보</Badge>
+    <Badge variant="neutral">중립</Badge>
+    <Badge variant="outline">아웃라인</Badge>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Badge variant="default">기본</Badge>
+<Badge variant="success">완료</Badge>
+<Badge variant="warning">주의</Badge>
+<Badge variant="error">오류</Badge>
+<Badge variant="info">정보</Badge>
+<Badge variant="neutral">중립</Badge>
+<Badge variant="outline">아웃라인</Badge>
+```
+
+## With Dot
+
+`dot` prop을 사용하면 좌측에 상태 인디케이터가 표시됩니다.
+
+<ComponentPreview>
+  <div className="flex flex-wrap items-center gap-2">
+    <Badge variant="success" dot>접수완료</Badge>
+    <Badge variant="warning" dot>처리중</Badge>
+    <Badge variant="error" dot>반려</Badge>
+    <Badge variant="info" dot>공지</Badge>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Badge variant="success" dot>접수완료</Badge>
+<Badge variant="warning" dot>처리중</Badge>
+```
+
+## Sizes
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Badge size="sm">Small</Badge>
+    <Badge size="md">Medium</Badge>
+    <Badge size="lg">Large</Badge>
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "success" \| "warning" \| "error" \| "info" \| "neutral" \| "outline"` | `"default"` | 배지 스타일 |
+| `size` | `"sm" \| "md" \| "lg"` | `"md"` | 배지 크기 |
+| `dot` | `boolean` | `false` | 좌측 도트 인디케이터 |

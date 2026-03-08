@@ -1,0 +1,85 @@
+---
+title: ContextMenu
+description: 우클릭으로 열리는 컨텍스트 메뉴입니다. 키보드 내비게이션과 외부 클릭 닫기를 지원합니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <ContextMenuBasicDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuLabel,
+  ContextMenuShortcut,
+} from "@kui-ui/react";
+
+<ContextMenu>
+  <ContextMenuTrigger>
+    <div>Right-click here</div>
+  </ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuLabel>Actions</ContextMenuLabel>
+    <ContextMenuItem>
+      Copy
+      <ContextMenuShortcut>Ctrl+C</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuItem>
+      Paste
+      <ContextMenuShortcut>Ctrl+V</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuSeparator />
+    <ContextMenuItem>
+      Delete
+      <ContextMenuShortcut>Del</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuItem disabled>Archive</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+## Disabled Items
+
+`disabled` prop을 전달하면 해당 항목이 비활성화되며 클릭 및 키보드 선택이 불가합니다.
+
+```tsx
+<ContextMenuItem disabled>Archive</ContextMenuItem>
+```
+
+## Accessibility
+
+- `role="menu"` (content) + `role="menuitem"` (item) 자동 적용
+- **우클릭**: 커서 위치에 메뉴 열기
+- **Arrow Up / Down**: 항목 간 이동 (비활성 항목 자동 건너뜀)
+- **Enter**: 활성 항목 선택
+- **Escape**: 메뉴 닫기
+- 외부 클릭 시 자동 닫기
+- 비활성 항목에 `aria-disabled` 적용
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `ContextMenu` | 루트 (상태 관리) |
+| `ContextMenuTrigger` | 우클릭 이벤트를 받는 영역 |
+| `ContextMenuContent` | 메뉴 드롭다운 패널 (커서 위치에 고정) |
+| `ContextMenuItem` | 개별 메뉴 항목 (`disabled`, `onClick` 지원) |
+| `ContextMenuSeparator` | 구분선 |
+| `ContextMenuLabel` | 비대화형 그룹 라벨 |
+| `ContextMenuShortcut` | 키보드 단축키 텍스트 (우측 정렬) |
+
+### ContextMenuItem Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `disabled` | `boolean` | `false` | 항목 비활성화 |
+| `onClick` | `(e: MouseEvent) => void` | - | 클릭 핸들러 |
+| `className` | `string` | - | 추가 CSS 클래스 |

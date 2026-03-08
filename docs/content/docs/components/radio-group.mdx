@@ -1,0 +1,40 @@
+---
+title: RadioGroup
+description: 여러 옵션 중 하나를 선택하는 라디오 버튼 그룹입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <RadioGroup defaultValue="option-1">
+    <RadioGroupItem value="option-1" label="이메일" description="이메일로 결과를 받습니다." />
+    <RadioGroupItem value="option-2" label="SMS" description="문자 메시지로 결과를 받습니다." />
+    <RadioGroupItem value="option-3" label="우편" description="등기 우편으로 결과를 받습니다." />
+  </RadioGroup>
+</ComponentPreview>
+
+```tsx
+<RadioGroup defaultValue="option-1" onValueChange={(v) => console.log(v)}>
+  <RadioGroupItem value="option-1" label="이메일" />
+  <RadioGroupItem value="option-2" label="SMS" />
+</RadioGroup>
+```
+
+## Props
+
+### RadioGroup
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string` | `""` | 초기 선택 값 |
+| `value` | `string` | - | 제어 모드 값 |
+| `onValueChange` | `(value: string) => void` | - | 선택 변경 핸들러 |
+| `disabled` | `boolean` | `false` | 전체 비활성 |
+
+### RadioGroupItem
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `value` | `string` | 옵션 값 (필수) |
+| `label` | `string` | 라벨 텍스트 |
+| `description` | `string` | 추가 설명 |

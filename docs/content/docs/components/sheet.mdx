@@ -1,0 +1,94 @@
+---
+title: Sheet
+description: 화면 가장자리에서 슬라이드되는 패널입니다. 보조 콘텐츠나 설정을 표시하는 데 사용됩니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <SheetBasicDemo />
+</ComponentPreview>
+
+## Side Variants
+
+Sheet는 화면의 네 방향(left, right, top, bottom)에서 열 수 있습니다.
+
+<ComponentPreview>
+  <SheetSideDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+} from "@kui-ui/react";
+
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>열기</Button>
+
+<Sheet open={open} onOpenChange={setOpen}>
+  <SheetContent side="right" onClose={() => setOpen(false)}>
+    <SheetHeader>
+      <SheetTitle>제목</SheetTitle>
+      <SheetDescription>설명 텍스트</SheetDescription>
+    </SheetHeader>
+    {/* 본문 내용 */}
+    <SheetFooter>
+      <Button variant="ghost" onClick={() => setOpen(false)}>취소</Button>
+      <Button>확인</Button>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>
+```
+
+## Side Options
+
+```tsx
+// 오른쪽 (기본값)
+<SheetContent side="right" onClose={handleClose}>...</SheetContent>
+
+// 왼쪽
+<SheetContent side="left" onClose={handleClose}>...</SheetContent>
+
+// 위
+<SheetContent side="top" onClose={handleClose}>...</SheetContent>
+
+// 아래
+<SheetContent side="bottom" onClose={handleClose}>...</SheetContent>
+```
+
+## Accessibility
+
+- `role="dialog"` 및 `aria-modal="true"` 자동 적용
+- **ESC** 키로 닫기
+- 열릴 때 body 스크롤 잠금
+- 오버레이 클릭으로 닫기
+- 닫기 버튼에 `aria-label="닫기"` 적용
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `Sheet` | 루트 컨테이너 (`open`, `onOpenChange` 관리) |
+| `SheetTrigger` | 시트 열기 트리거 버튼 |
+| `SheetOverlay` | 배경 오버레이 |
+| `SheetContent` | 슬라이드 패널 본체 (오버레이 + ESC + X 버튼 포함) |
+| `SheetHeader` | 상단 헤더 영역 |
+| `SheetTitle` | 제목 (`h2`) |
+| `SheetDescription` | 설명 텍스트 |
+| `SheetFooter` | 하단 액션 버튼 영역 |
+| `SheetClose` | 닫기 트리거 버튼 |
+
+### SheetContent Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"left" \| "right" \| "top" \| "bottom"` | `"right"` | 패널이 열리는 방향 |
+| `onClose` | `() => void` | — | 닫기 핸들러 (ESC, 오버레이, X 버튼 모두 호출) |

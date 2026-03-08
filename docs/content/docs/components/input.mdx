@@ -1,0 +1,68 @@
+---
+title: Input
+description: 라벨과 유효성 검사 에러 메시지가 포함된 접근성 준수 폼 필드입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="w-full max-w-sm space-y-4">
+    <Input label="이름" placeholder="홍길동" required />
+    <Input label="이메일" type="email" placeholder="example@gov.kr" helperText="업무용 이메일을 입력해주세요." />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Input label="이름" placeholder="홍길동" required />
+<Input label="이메일" type="email" placeholder="example@gov.kr" helperText="업무용 이메일을 입력해주세요." />
+```
+
+## Sizes
+
+<ComponentPreview>
+  <div className="w-full max-w-sm space-y-4">
+    <Input label="Large" inputSize="lg" placeholder="lg" />
+    <Input label="Medium" inputSize="md" placeholder="md" />
+    <Input label="Small" inputSize="sm" placeholder="sm" />
+  </div>
+</ComponentPreview>
+
+## Error State
+
+`errorMessage`를 전달하면 자동으로 에러 스타일이 적용되고, `role="alert"`로 스크린 리더에 전달됩니다.
+
+<ComponentPreview>
+  <div className="w-full max-w-sm">
+    <Input label="전화번호" placeholder="010-0000-0000" errorMessage="올바른 전화번호 형식이 아닙니다." required />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Input
+  label="전화번호"
+  placeholder="010-0000-0000"
+  errorMessage="올바른 전화번호 형식이 아닙니다."
+  required
+/>
+```
+
+## Disabled & ReadOnly
+
+<ComponentPreview>
+  <div className="w-full max-w-sm space-y-4">
+    <Input label="비활성" value="수정 불가" disabled />
+    <Input label="읽기 전용" value="읽기만 가능" readOnly />
+  </div>
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | - | 라벨 텍스트 |
+| `inputSize` | `"lg" \| "md" \| "sm"` | `"md"` | 입력 필드 크기 |
+| `helperText` | `string` | - | 도움말 텍스트 |
+| `errorMessage` | `string` | - | 에러 메시지 (설정 시 에러 스타일 자동 적용) |
+| `required` | `boolean` | `false` | 필수 입력 표시 |
+| `disabled` | `boolean` | `false` | 비활성 상태 |
+| `readOnly` | `boolean` | `false` | 읽기 전용 |

@@ -1,0 +1,40 @@
+---
+title: Avatar
+description: 사용자 프로필 이미지 또는 이니셜 표시 컴포넌트입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <Avatar size="sm" fallback="김" />
+    <Avatar size="md" fallback="이" />
+    <Avatar size="lg" alt="박민수" />
+    <Avatar size="xl" fallback="정" />
+  </div>
+</ComponentPreview>
+
+## Sizes
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <Avatar size="sm" fallback="S" />
+    <Avatar size="md" fallback="M" />
+    <Avatar size="lg" fallback="L" />
+    <Avatar size="xl" fallback="XL" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Avatar size="lg" alt="홍길동" />
+<Avatar size="md" fallback="홍" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"sm" \| "md" \| "lg" \| "xl"` | `"md"` | 아바타 크기 |
+| `src` | `string` | - | 이미지 URL |
+| `alt` | `string` | - | 대체 텍스트 |
+| `fallback` | `string` | - | 이미지 없을 때 표시할 텍스트 |

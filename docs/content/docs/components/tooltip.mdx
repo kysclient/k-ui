@@ -1,0 +1,37 @@
+---
+title: Tooltip
+description: 요소에 마우스를 올리면 추가 정보를 표시하는 툴팁입니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex items-center gap-6">
+    <Tooltip content="위쪽 툴팁" side="top">
+      <Button variant="secondary" size="sm">Top</Button>
+    </Tooltip>
+    <Tooltip content="아래쪽 툴팁" side="bottom">
+      <Button variant="secondary" size="sm">Bottom</Button>
+    </Tooltip>
+    <Tooltip content="왼쪽 툴팁" side="left">
+      <Button variant="secondary" size="sm">Left</Button>
+    </Tooltip>
+    <Tooltip content="오른쪽 툴팁" side="right">
+      <Button variant="secondary" size="sm">Right</Button>
+    </Tooltip>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Tooltip content="도움말 텍스트" side="top">
+  <Button>호버하세요</Button>
+</Tooltip>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `content` | `ReactNode` | - | 툴팁 내용 (필수) |
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"top"` | 표시 위치 |
+| `delayMs` | `number` | `200` | 표시 지연 시간(ms) |

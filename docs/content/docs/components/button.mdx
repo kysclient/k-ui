@@ -1,0 +1,85 @@
+---
+title: Button
+description: 정부 표준 규격(대/중/소) 버튼. 고대비 모드 대응, 로딩 및 비활성 상태를 지원합니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex flex-wrap items-center gap-3">
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="tertiary">Tertiary</Button>
+    <Button variant="danger">Danger</Button>
+    <Button variant="ghost">Ghost</Button>
+    <Button variant="link">Link</Button>
+  </div>
+</ComponentPreview>
+
+## Sizes
+
+정부 표준 규격에 따라 대(lg), 중(md), 소(sm) 3가지 크기를 제공합니다.
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <Button size="lg">Large</Button>
+    <Button size="md">Medium</Button>
+    <Button size="sm">Small</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Button size="lg">Large</Button>
+<Button size="md">Medium</Button>
+<Button size="sm">Small</Button>
+```
+
+## Loading State
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <Button loading>처리중...</Button>
+    <Button variant="secondary" loading>로딩</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Button loading>처리중...</Button>
+```
+
+## Disabled
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <Button disabled>비활성</Button>
+    <Button variant="secondary" disabled>비활성</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Button disabled>비활성</Button>
+```
+
+## Full Width
+
+<ComponentPreview>
+  <div className="w-full max-w-sm">
+    <Button fullWidth>전체 너비 버튼</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Button fullWidth>전체 너비 버튼</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "danger" \| "ghost" \| "link"` | `"primary"` | 버튼 스타일 |
+| `size` | `"lg" \| "md" \| "sm"` | `"md"` | 버튼 크기 |
+| `fullWidth` | `boolean` | `false` | 전체 너비 사용 |
+| `loading` | `boolean` | `false` | 로딩 스피너 표시 |
+| `disabled` | `boolean` | `false` | 비활성 상태 |
+| `leftIcon` | `ReactNode` | - | 좌측 아이콘 |
+| `rightIcon` | `ReactNode` | - | 우측 아이콘 |

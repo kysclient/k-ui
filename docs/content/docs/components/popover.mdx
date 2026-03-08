@@ -1,0 +1,106 @@
+---
+title: Popover
+description: 트리거 요소에 연결되는 부동 콘텐츠 패널입니다. 클릭으로 열고 닫을 수 있습니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="flex items-center gap-3">
+    <PopoverBasicDemo />
+  </div>
+</ComponentPreview>
+
+## Form Popover
+
+폼을 포함한 팝오버입니다.
+
+<ComponentPreview>
+  <PopoverFormDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverClose,
+} from "@kui-ui/react";
+
+<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>
+    <p>Popover content here.</p>
+    <PopoverClose>Close</PopoverClose>
+  </PopoverContent>
+</Popover>
+```
+
+## Side & Align Options
+
+`side`와 `align` 속성을 사용하여 팝오버의 위치를 조정할 수 있습니다.
+
+```tsx
+{/* 상단 중앙 */}
+<PopoverContent side="top" align="center">...</PopoverContent>
+
+{/* 하단 왼쪽 정렬 */}
+<PopoverContent side="bottom" align="start">...</PopoverContent>
+
+{/* 오른쪽, 끝 정렬 */}
+<PopoverContent side="right" align="end">...</PopoverContent>
+```
+
+## Controlled Usage
+
+`open`과 `onOpenChange`를 사용하여 외부에서 상태를 제어할 수 있습니다.
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Popover open={open} onOpenChange={setOpen}>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>
+    <p>Controlled popover</p>
+  </PopoverContent>
+</Popover>
+```
+
+## Accessibility
+
+- `role="dialog"` 자동 적용
+- `aria-expanded` 및 `aria-haspopup="dialog"` 트리거에 자동 적용
+- **ESC** 키로 닫기
+- 외부 클릭으로 닫기
+- 키보드로 트리거 활성화 가능 (Enter / Space)
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `Popover` | 루트 컨테이너 (`open`, `onOpenChange`, `defaultOpen` 관리) |
+| `PopoverTrigger` | 팝오버를 토글하는 버튼 |
+| `PopoverContent` | 부동 콘텐츠 패널 |
+| `PopoverClose` | 팝오버를 닫는 버튼 (콘텐츠 내부에서 사용) |
+
+## Props
+
+### Popover
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | 제어 모드에서 열림 상태 |
+| `onOpenChange` | `(open: boolean) => void` | - | 열림 상태 변경 콜백 |
+| `defaultOpen` | `boolean` | `false` | 비제어 모드 초기 열림 상태 |
+| `children` | `ReactNode` | - | 자식 요소 |
+
+### PopoverContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `side` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | 팝오버가 나타나는 방향 |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | 트리거 대비 정렬 |
+| `sideOffset` | `number` | `4` | 트리거와의 간격 (px) |
+| `className` | `string` | - | 추가 CSS 클래스 |

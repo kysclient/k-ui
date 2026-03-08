@@ -1,0 +1,73 @@
+---
+title: Getting Started
+description: K-UI를 프로젝트에 설치하고 사용하는 방법을 안내합니다.
+---
+
+## Installation
+
+```bash
+npm install @kui-ui/react
+```
+
+## Tailwind CSS Plugin
+
+`tailwind.config.js`에 KRDS (Korea Design System) 플러그인을 등록하면 디자인 토큰(색상, 폰트, radius)이 자동 주입됩니다.
+
+```js title="tailwind.config.js"
+const krdsPlugin = require("@kui-ui/react/plugin");
+
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@kui-ui/react/dist/**/*.{js,cjs}",
+  ],
+  plugins: [krdsPlugin],
+};
+```
+
+## Usage
+
+```tsx
+import { Button, Input, Badge } from "@kui-ui/react";
+
+export default function App() {
+  return (
+    <div>
+      <Button variant="primary" size="md">확인</Button>
+      <Input label="이름" required placeholder="홍길동" />
+      <Badge variant="success" dot>완료</Badge>
+    </div>
+  );
+}
+```
+
+## Copy & Paste (Registry)
+
+소스 코드를 직접 복사해서 사용할 수도 있습니다.
+각 컴포넌트 문서 하단에 전체 소스 코드가 포함되어 있습니다.
+
+<Cards>
+  <Card title="Button" href="/docs/components/button" />
+  <Card title="Input" href="/docs/components/input" />
+  <Card title="Badge" href="/docs/components/badge" />
+  <Card title="Card" href="/docs/components/card" />
+  <Card title="Tabs" href="/docs/components/tabs" />
+  <Card title="Table" href="/docs/components/table" />
+  <Card title="Dialog" href="/docs/components/dialog" />
+  <Card title="Select" href="/docs/components/select" />
+  <Card title="Checkbox" href="/docs/components/checkbox" />
+  <Card title="Switch" href="/docs/components/switch" />
+  <Card title="Accordion" href="/docs/components/accordion" />
+  <Card title="Alert" href="/docs/components/alert" />
+  <Card title="Pagination" href="/docs/components/pagination" />
+  <Card title="Textarea" href="/docs/components/textarea" />
+  <Card title="Tooltip" href="/docs/components/tooltip" />
+  <Card title="Avatar" href="/docs/components/avatar" />
+  <Card title="Sheet" href="/docs/components/sheet" />
+  <Card title="Calendar" href="/docs/components/calendar" />
+  <Card title="Breadcrumb" href="/docs/components/breadcrumb" />
+  <Card title="Carousel" href="/docs/components/carousel" />
+  <Card title="ContextMenu" href="/docs/components/context-menu" />
+  <Card title="Progress" href="/docs/components/progress" />
+  <Card title="Popover" href="/docs/components/popover" />
+</Cards>

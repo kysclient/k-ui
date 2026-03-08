@@ -1,0 +1,64 @@
+---
+title: Accordion
+description: 접고 펼칠 수 있는 콘텐츠 섹션입니다. FAQ, 약관 등에 적합합니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <div className="w-full max-w-md">
+    <Accordion type="single" defaultValue={["item-1"]}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>온라인 민원은 어떻게 접수하나요?</AccordionTrigger>
+        <AccordionContent>
+          홈페이지 상단의 '민원 접수' 메뉴에서 필요한 서류를 첨부하여 접수할 수 있습니다.
+          접수된 민원은 영업일 기준 3일 이내에 처리됩니다.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>처리 현황은 어디서 확인하나요?</AccordionTrigger>
+        <AccordionContent>
+          '마이페이지 > 민원 처리 현황'에서 실시간으로 확인할 수 있습니다.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3">
+        <AccordionTrigger>서류 보완은 어떻게 하나요?</AccordionTrigger>
+        <AccordionContent>
+          담당자가 보완 요청 시 알림이 발송되며, 마이페이지에서 추가 서류를 첨부할 수 있습니다.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  </div>
+</ComponentPreview>
+
+## Multiple
+
+`type="multiple"`로 설정하면 여러 항목을 동시에 열 수 있습니다.
+
+```tsx
+<Accordion type="multiple">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>제목</AccordionTrigger>
+    <AccordionContent>내용</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Props
+
+### Accordion
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `"single" \| "multiple"` | `"single"` | 단일/복수 열림 모드 |
+| `defaultValue` | `string[]` | `[]` | 초기에 열려있을 항목 |
+
+### AccordionItem
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `value` | `string` | 항목 고유 식별자 (필수) |
+
+### AccordionTrigger / AccordionContent
+
+별도 Props 없이 children만 전달합니다.

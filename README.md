@@ -8,7 +8,7 @@ KRDS (Korea Design System)에서 영감을 받은 깔끔하고 접근성 높은 
 
 ## 특징
 
-- **27개 이상의 컴포넌트** -- Button, Dialog, Select, Sheet, Calendar, Carousel, ContextMenu, Progress, Popover 등
+- **30개 이상의 컴포넌트** -- Button, Dialog, Select, Sheet, Calendar, Carousel, ContextMenu, Toast, DropdownMenu, Slider, Progress, Popover 등
 - **접근성 기본 탑재** -- 모든 컴포넌트가 WCAG 2.1 AA 기준을 준수하며, ARIA 속성과 키보드 내비게이션을 지원합니다.
 - **다크 모드** -- 모든 컴포넌트가 라이트/다크 모드를 기본 지원합니다.
 - **Tailwind CSS 플러그인** -- 플러그인 한 줄 등록으로 KRDS (Korea Design System) 디자인 토큰(색상, 타이포그래피, border-radius)이 프로젝트에 주입됩니다.
@@ -64,7 +64,7 @@ Button, Badge, Separator, Skeleton, Avatar, Tooltip
 
 ### Form
 
-Input, Textarea, Select, Checkbox, Switch, Radio Group, Calendar, Label
+Input, Textarea, Select, Checkbox, Switch, Radio Group, Calendar, Label, Slider
 
 ### Layout
 
@@ -72,11 +72,11 @@ Card, Accordion, Tabs, Table, Pagination, Breadcrumb, Carousel
 
 ### Feedback
 
-Alert, Dialog, Sheet, Progress, Popover
+Alert, Dialog, Sheet, Progress, Popover, Toast
 
 ### Advanced
 
-ContextMenu
+ContextMenu, Dropdown Menu
 
 ## 디자인 토큰
 
@@ -106,7 +106,7 @@ import registry from "@kui-ui/react/registry";
 ```
 k-ui/
   src/                  # 라이브러리 소스
-    components/         # 27개 이상의 컴포넌트 디렉토리
+    components/         # 30개 이상의 컴포넌트 디렉토리
     theme/              # Tailwind 플러그인 및 디자인 토큰
     lib/                # 유틸리티 (cn 헬퍼)
     index.ts            # 배럴 익스포트

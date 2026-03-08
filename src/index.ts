@@ -151,6 +151,32 @@ export {
   type PopoverContentProps,
 } from "./components/popover";
 
+export {
+  ToastProvider,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastActionButton,
+  useToast,
+  type ToastProps,
+} from "./components/toast";
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuGroup,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+  DropdownMenuShortcut,
+  type DropdownMenuProps,
+  type DropdownMenuItemProps,
+  type DropdownMenuCheckboxItemProps,
+} from "./components/dropdown-menu";
+export { Slider, type SliderProps } from "./components/slider";
+
 // Theme tokens (for programmatic access)
 export {
   krdsColors,

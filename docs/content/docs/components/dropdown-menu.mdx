@@ -1,0 +1,143 @@
+---
+title: Dropdown Menu
+description: 트리거 버튼을 클릭하면 열리는 드롭다운 메뉴입니다. 키보드 내비게이션, 체크박스 항목을 지원합니다.
+---
+
+## Preview
+
+<ComponentPreview>
+  <DropdownMenuDemo />
+</ComponentPreview>
+
+## Checkbox Items
+
+체크박스 항목이 포함된 드롭다운 메뉴입니다.
+
+<ComponentPreview>
+  <DropdownMenuCheckboxDemo />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+  DropdownMenuShortcut,
+} from "@kui-ui/react";
+
+<DropdownMenu>
+  <DropdownMenuTrigger>
+    <button>Open Menu</button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+    <DropdownMenuItem>
+      Edit
+      <DropdownMenuShortcut>Ctrl+E</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuItem>Copy</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Delete</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Checkbox Items Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+} from "@kui-ui/react";
+
+const [checked, setChecked] = useState(false);
+
+<DropdownMenu>
+  <DropdownMenuTrigger>
+    <button>Options</button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuCheckboxItem
+      checked={checked}
+      onCheckedChange={setChecked}
+    >
+      Show Status Bar
+    </DropdownMenuCheckboxItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Disabled Items
+
+`disabled` prop을 전달하면 해당 항목이 비활성화됩니다.
+
+```tsx
+<DropdownMenuItem disabled>Archive</DropdownMenuItem>
+```
+
+## Accessibility
+
+- `role="menu"` (content) + `role="menuitem"` (item) 자동 적용
+- `role="menuitemcheckbox"` + `aria-checked` (checkbox item)
+- `aria-expanded` 및 `aria-haspopup="menu"` 트리거에 자동 적용
+- **Arrow Up / Down**: 항목 간 이동 (비활성 항목 자동 건너뜀)
+- **Enter**: 활성 항목 선택
+- **Escape**: 메뉴 닫기
+- 외부 클릭 시 자동 닫기
+
+## Sub-components
+
+| Component | Description |
+|-----------|-------------|
+| `DropdownMenu` | 루트 (상태 관리, `open`, `onOpenChange`, `defaultOpen`) |
+| `DropdownMenuTrigger` | 메뉴를 토글하는 버튼 |
+| `DropdownMenuContent` | 메뉴 드롭다운 패널 |
+| `DropdownMenuItem` | 개별 메뉴 항목 (`disabled`, `onClick` 지원) |
+| `DropdownMenuCheckboxItem` | 체크박스 메뉴 항목 (`checked`, `onCheckedChange`) |
+| `DropdownMenuGroup` | 항목 그룹 래퍼 |
+| `DropdownMenuSeparator` | 구분선 |
+| `DropdownMenuLabel` | 비대화형 그룹 라벨 |
+| `DropdownMenuShortcut` | 키보드 단축키 텍스트 (우측 정렬) |
+
+## Props
+
+### DropdownMenu
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | - | 제어 모드에서 열림 상태 |
+| `onOpenChange` | `(open: boolean) => void` | - | 열림 상태 변경 콜백 |
+| `defaultOpen` | `boolean` | `false` | 비제어 모드 초기 열림 상태 |
+| `children` | `ReactNode` | - | 자식 요소 |
+
+### DropdownMenuContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `align` | `"start" \| "center" \| "end"` | `"start"` | 트리거 대비 정렬 |
+| `sideOffset` | `number` | `4` | 트리거와의 간격 (px) |
+| `className` | `string` | - | 추가 CSS 클래스 |
+
+### DropdownMenuItem
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `disabled` | `boolean` | `false` | 항목 비활성화 |
+| `onClick` | `(e: MouseEvent) => void` | - | 클릭 핸들러 |
+| `className` | `string` | - | 추가 CSS 클래스 |
+
+### DropdownMenuCheckboxItem
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean` | `false` | 체크 상태 |
+| `onCheckedChange` | `(checked: boolean) => void` | - | 체크 상태 변경 콜백 |
+| `disabled` | `boolean` | `false` | 항목 비활성화 |
+| `className` | `string` | - | 추가 CSS 클래스 |

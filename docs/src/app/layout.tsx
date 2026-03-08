@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | K-UI',
   },
   description:
-    'A clean, accessible React UI component library inspired by KRDS (Korea Design System). 27+ components with dark mode, TypeScript, and Tailwind CSS.',
+    'A clean, accessible React UI component library inspired by KRDS (Korea Design System). 30+ components with dark mode, TypeScript, and Tailwind CSS.',
   keywords: [
     'React',
     'UI Library',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'K-UI',
     description:
-      'A clean, accessible React UI component library inspired by KRDS (Korea Design System). 27+ components with dark mode, TypeScript, and Tailwind CSS.',
+      'A clean, accessible React UI component library inspired by KRDS (Korea Design System). 30+ components with dark mode, TypeScript, and Tailwind CSS.',
     siteName: 'K-UI',
   },
   twitter: {

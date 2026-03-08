@@ -7,7 +7,7 @@ const components = [
   'avatar', 'alert', 'accordion', 'textarea', 'checkbox', 'switch',
   'radio-group', 'tabs', 'tooltip', 'dialog', 'select', 'table',
   'pagination', 'sheet', 'calendar', 'breadcrumb', 'carousel',
-  'context-menu', 'progress', 'popover',
+  'context-menu', 'progress', 'popover', 'toast', 'dropdown-menu', 'slider',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

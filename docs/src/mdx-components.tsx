@@ -34,6 +34,11 @@ import { PopoverBasicDemo, PopoverFormDemo } from '@/components/krds/popover-dem
 import { Calendar } from '@/components/krds/calendar';
 import { Progress } from '@/components/krds/progress';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from '@/components/krds/breadcrumb';
+import { Slider } from '@/components/krds/slider';
+import { SliderDemo, SliderRangeDemo, SliderDisabledDemo } from '@/components/krds/slider-demo';
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuGroup, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuShortcut } from '@/components/krds/dropdown-menu';
+import { DropdownMenuDemo, DropdownMenuCheckboxDemo } from '@/components/krds/dropdown-menu-demo';
+import { ToastDemo, ToastActionDemo } from '@/components/krds/toast-demo';
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -72,6 +77,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Calendar,
     Progress,
     Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis,
+    Slider,
+    SliderDemo, SliderRangeDemo, SliderDisabledDemo,
+    DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuGroup, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuShortcut,
+    DropdownMenuDemo, DropdownMenuCheckboxDemo,
+    ToastDemo, ToastActionDemo,
     ...components,
   };
 }

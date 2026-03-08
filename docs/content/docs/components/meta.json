@@ -24,13 +24,16 @@
     "pagination",
     "breadcrumb",
     "carousel",
+    "slider",
     "---Feedback---",
     "alert",
     "dialog",
     "sheet",
     "progress",
     "popover",
+    "toast",
     "---Advanced---",
-    "context-menu"
+    "context-menu",
+    "dropdown-menu"
   ]
 }

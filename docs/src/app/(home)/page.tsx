@@ -85,10 +85,13 @@ const components = [
   { name: "ContextMenu", href: "/docs/components/context-menu" },
   { name: "Progress", href: "/docs/components/progress" },
   { name: "Popover", href: "/docs/components/popover" },
+  { name: "Toast", href: "/docs/components/toast" },
+  { name: "Dropdown Menu", href: "/docs/components/dropdown-menu" },
+  { name: "Slider", href: "/docs/components/slider" },
 ];
 
 const stats = [
-  { value: "27+", label: "Components" },
+  { value: "30+", label: "Components" },
   { value: "AA", label: "WCAG 2.1" },
   { value: "100%", label: "TypeScript" },
   { value: "0", label: "Dependencies*" },

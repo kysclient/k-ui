@@ -25,6 +25,24 @@ const templates = [
     href: '/templates/hometax',
     tags: ['Tax', 'Portal', 'Full Page'],
   },
+  {
+    title: 'NAVER',
+    description: '네이버 메인페이지 클론. 검색, 뉴스스탠드, 실시간 급상승 검색어, 날씨, 쇼핑 등 포털 서비스 템플릿.',
+    href: '/templates/naver',
+    tags: ['Portal', 'Search', 'Full Page'],
+  },
+  {
+    title: 'K-SHOP',
+    description: '쇼핑몰 메인페이지 클론. 상품 카드, 타임 세일, 브랜드 랭킹, 카테고리 등 이커머스 템플릿.',
+    href: '/templates/shop',
+    tags: ['E-Commerce', 'Shopping', 'Full Page'],
+  },
+  {
+    title: '회원가입',
+    description: '회원가입 폼 템플릿. 소셜 로그인, 실시간 유효성 검사, 비밀번호 강도 표시, 약관 동의 등 인터랙티브 폼.',
+    href: '/templates/signup',
+    tags: ['Form', 'Auth', 'Interactive'],
+  },
 ];
 
 export default function TemplatesPage() {
